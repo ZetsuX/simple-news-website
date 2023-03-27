@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ZX News</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        />
+        <script src="https://kit.fontawesome.com/8ee6b1ea1e.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu" />
+    </head>
+    <body>
+        <nav
+            class="navbar navbar-expand-md bg-warning mb-4 sticky-top d-flex justify-content-evenly"
+            id="navbar"
+        >
+            <a class="navbar-brand" href="#">ZX News</a>
+            <div class="navbar-items">
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Economy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Politics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Entertainment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sports</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Technology</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button type="button" class="btn btn-dark mode-toggler-btn" onclick="toggleMode()">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </nav>
+
+        <main role="main" class="container">
+            <div class="row">
+                <div class="col-md-8 blog-main">
+                    <h3 class="pb-3 mb-4 border-bottom">Latest News</h3>
+
+                    <div class="blog-post bg-light rounded">
+                        <div class="p-4">
+                            <img class="blog-post-img w-100 pb-3 rounded" src="assets/news1.jpg" />
+                            <h2 class="blog-post-title">The Casting of Bill Bob</h2>
+                            <p class="blog-post-meta">
+                                March 27, 2023 by <a href="#">Budi Santoso</a>
+                            </p>
+
+                            <p>
+                                Actor Bill Bob has just been cast in an upcoming major motion
+                                picture. The movie is a comedy-drama directed by acclaimed filmmaker
+                                John Smith and is set to begin filming later this year. Bill Bob is
+                                known for his roles in several popular television shows and is sure
+                                to bring his unique comedic style to the big screen. Fans of the
+                                actor are sure to be pleased with this exciting news.
+                            </p>
+                        </div>
+                        <hr />
+                    </div>
+
+                    <div class="blog-post bg-light rounded">
+                        <div class="p-4">
+                            <img class="blog-post-img w-100 pb-3 rounded" src="assets/news2.jpg" />
+                            <h2 class="blog-post-title">Amazonia Forest Fire Tragedy</h2>
+                            <p class="blog-post-meta">March 26, 2023 by <a href="#">Jojo Kai</a></p>
+
+                            <p>
+                                The Amazonia forest fire tragedy has caused widespread devastation
+                                across the region. The fires, which have been burning for weeks,
+                                have destroyed an estimated 1.2 million hectares of rainforest. The
+                                fires are believed to have been caused by the illegal clearing of
+                                land for farming and cattle ranching. The smoke from the fires has
+                                caused air pollution across the region, and has been linked to a
+                                number of health problems. The local population has been severely
+                                impacted, with many people losing their homes and livelihoods.
+                            </p>
+                        </div>
+                        <hr />
+                    </div>
+                </div>
+
+                <aside class="col-md-4 blog-sidebar">
+                    <div class="p-4 mb-3 bg-light rounded">
+                        <h4>About</h4>
+                        <p class="mb-0">
+                            Your one-stop destination for the latest news and information from
+                            around the world. We provide you with the latest breaking news and
+                            videos straight from the source. Our team of experienced journalists is
+                            dedicated to bringing you the most up-to-date news, analysis, and
+                            insights, so you can stay informed and make the best decisions for your
+                            life.
+                        </p>
+                    </div>
+
+                    <div class="p-4">
+                        <h4>Categories</h4>
+                        <ol class="list-unstyled mb-0">
+                            <li><a href="#">Economy</a></li>
+                            <li><a href="#">Politics</a></li>
+                            <li><a href="#">Entertainment</a></li>
+                            <li><a href="#">Sports</a></li>
+                            <li><a href="#">Technology</a></li>
+                        </ol>
+                    </div>
+
+                    <div class="p-4">
+                        <h4>Archives</h4>
+                        <ol class="list-unstyled mb-0">
+                            <li><a href="#">March 2023</a></li>
+                            <li><a href="#">February 2023</a></li>
+                            <li><a href="#">January 2023</a></li>
+                            <li><a href="#">December 2022</a></li>
+                        </ol>
+                    </div>
+                </aside>
+            </div>
+        </main>
+        <footer class="blog-footer text-center">
+            <p>ZX News &copy; 2023</p>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <script>
+            var isDark = false;
+
+            function toggleMode() {
+                if (isDark) {
+                    document.body.style.backgroundColor = "#fff";
+                    document.body.style.color = "#000000";
+
+                    document
+                        .querySelector(".bg-secondary")
+                        .classList.replace("bg-secondary", "bg-warning");
+
+                    const darkEles = document.querySelectorAll(".bg-dark");
+                    darkEles.forEach((e) => {
+                        e.classList.replace("bg-dark", "bg-light");
+                    });
+
+                    const button = document.querySelector(".mode-toggler-btn");
+                    button.classList.replace("btn-light", "btn-dark");
+                    button.innerHTML = '<i class="fa-solid fa-moon"></i>';
+
+                    isDark = false;
+                } else {
+                    document.body.style.backgroundColor = "#28282B";
+                    document.body.style.color = "#fff";
+
+                    document
+                        .querySelector(".bg-warning")
+                        .classList.replace("bg-warning", "bg-secondary");
+
+                    const lightEles = document.querySelectorAll(".bg-light");
+                    lightEles.forEach((e) => {
+                        e.classList.replace("bg-light", "bg-dark");
+                    });
+
+                    const button = document.querySelector(".mode-toggler-btn");
+                    button.classList.replace("btn-dark", "btn-light");
+                    button.innerHTML = '<i class="fa-solid fa-sun"></i>';
+
+                    isDark = true;
+                }
+            }
+        </script>
+    </body>
+</html>
